@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/:key/:msg?', (req, res) => {
     const rawKey = req.params['key'];
     const rawMsg = req.params['msg'];
-    if(apiKeys.includes(rawKey)) {
+    if(auth(rawKey) === true) {
         res.status(200).send({
             status: "online",
             message: rawMsg
@@ -35,3 +35,11 @@ app.get('/:key/:msg?', (req, res) => {
         })
     }
 });
+
+function auth(rawKey) {
+    if(apiKeys.includes(rawKey)) {
+        return true
+    } else {
+        return false
+    }
+}
