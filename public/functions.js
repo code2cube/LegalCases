@@ -1,9 +1,18 @@
 const fs = require('fs');
 
 const keysFile = './private/keys.json';
-const data = fs.readFileSync(keysFile, 'utf8');
-const keys = JSON.parse(data);
+const keysData = fs.readFileSync(keysFile, 'utf8');
+const keys = JSON.parse(keysData);
 const apiKeys = keys.apiKeys;
+
+const casesFile = './private/cases.json';
+const casesData = fs.readFileSync(casesFile, 'utf8');
+const get_cases = JSON.parse(casesData);
+const cases = get_cases.cases
+
+function casesZ() {
+    return cases;
+}
 
 function auth(rawKey) {
     if(apiKeys.includes(rawKey)) {
@@ -28,5 +37,6 @@ function invalidAPIKeyMsg(res) {
 module.exports = {
     auth,
     notAuthenticatedMsg,
-    invalidAPIKeyMsg
+    invalidAPIKeyMsg,
+    casesZ
 };

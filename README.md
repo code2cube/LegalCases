@@ -7,13 +7,13 @@ Created to provide knowledge on cool law cases.
 {
     case: "lorem ipsum",
     state: "New York",
-    type: "Theft",
     category: "Criminal",
-    plaintiff: "Bob",
+    type: "Theft",
+    defendant: "Bob",
     prosecution: "Timmy",
     winner: "Timmy",
     sentence: "Life without Parole",
-    link: "https://example.com"
+    source: "https://example.com"
 }
 ```
 **More information will be available later!**

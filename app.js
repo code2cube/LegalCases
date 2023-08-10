@@ -14,14 +14,25 @@ app.get('/', (req, res) => {
     functions.notAuthenticatedMsg(res)
 });
 
-app.get('/:key/:msg?', (req, res) => {
+//random case
+app.get('/:key', (req, res) => {
     const rawKey = req.params['key'];
-    const rawMsg = req.params['msg'];
+    const cases = functions.casesZ()
+    const index = Math.floor(Math.random() * cases.length);
     if(functions.auth(rawKey) === true) {
-        res.status(200).send({
-            status: "online",
-            message: rawMsg
-        })
+       res.status(200).send({
+            case: cases[index]["case"],
+            state: cases[index]["state"],
+            category: cases[index]["category"],
+            type: cases[index]["type"],
+            defendant: cases[index]["defendant"],
+            plaintiff: cases[index]["plaintiff"],
+            prosecution: case[index]["prosecution"],
+            winner: cases[index]["winner"],
+            sentence: cases[index]["sentence"],
+            settlement: cases[index]["settlement"],
+            source: cases[index]["source"],
+       })
     } else {
         functions.invalidAPIKeyMsg(res)
     }
