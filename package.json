@@ -4,6 +4,7 @@
   "description": "Created to provide knowledge on cool law cases.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Samuel Sharivker",

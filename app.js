@@ -27,7 +27,7 @@ app.get('/:key', (req, res) => {
             type: cases[index]["type"],
             defendant: cases[index]["defendant"],
             plaintiff: cases[index]["plaintiff"],
-            prosecution: case[index]["prosecution"],
+            prosecution: cases[index]["prosecution"],
             winner: cases[index]["winner"],
             sentence: cases[index]["sentence"],
             settlement: cases[index]["settlement"],
